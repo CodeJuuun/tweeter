@@ -1,4 +1,7 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
@@ -8,5 +11,9 @@ nav {
 }
 
 nav span {
-  font-family: "Bungee",sans-serif;
+  font-family: "Bungee", sans-serif;
+}
+
+.right-side i {
+  margin-left: 5px;;
 }
