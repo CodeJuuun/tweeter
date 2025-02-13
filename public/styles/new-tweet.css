@@ -18,7 +18,7 @@
 .label {
   display: block;
   font-size: 18px;
-  text-align: center;
+  text-align: left;
 }
 
 .textarea {
@@ -27,7 +27,7 @@
   margin-bottom: 10px;
   font-size: 16px;
   resize: none;
-  width: 400px;
+  width: 100%;
   background-color: #f8f9fa;
 }
 
@@ -37,14 +37,6 @@
 }
 .new-tweet button:hover {
   background-color: #344581;
-}
-
-.btn-container {
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  width: 100%;
-
 }
 
 .btn-submit {
