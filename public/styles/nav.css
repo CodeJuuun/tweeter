@@ -16,6 +16,9 @@ nav span {
   font-family: "Bungee", sans-serif;
 }
 
+.fa-solid {
+  color: red;
+}
 .right-side i {
   margin-left: 25px;;
 }
