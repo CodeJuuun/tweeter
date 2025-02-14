@@ -19,11 +19,13 @@
   display: block;
   font-size: 18px;
   text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  padding-top: 20px;
 }
 
 #tweet-text {
   border: none;
-  border-bottom: 2px solid black;
   margin-bottom: 10px;
   font-size: 16px;
   resize: none;
