@@ -67,5 +67,7 @@ const timeAgo = function(timestamp) {
 
 $(".tweeter-form").on("submit", function(event) {
   event.preventDefault(); //prevents page from refreshing
-  console.log("form submitted") // testing code
+
+  const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
+  console.log("form submitted", formData) // testing code
 });
