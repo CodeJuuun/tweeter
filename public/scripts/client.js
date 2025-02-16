@@ -65,3 +65,7 @@ const timeAgo = function(timestamp) {
   renderTweets(data);
 })
 
+$(".tweeter-form").on("submit", function(event) {
+  event.preventDefault(); //prevents page from refreshing
+  console.log("form submitted") // testing code
+});
