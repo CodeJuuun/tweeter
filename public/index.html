@@ -22,12 +22,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -67,32 +62,16 @@
   </form>
 </section>
 
-<section class="tweets-container">
-
-  <!-- Will represent all contained tweets -->
-  <article class="tweet-box">
-    <!-- header will contain user info -->
-    <header>
-      <div class="user-box">
-        <img src="/images/user.png" alt="user avatar">
-        <span class="tweet-name"> John </span>
-      </div>
-      <span class="tweet-username">@Doe</span>
-    </header>
-
-    <p class="tweet-contents">hello i am an aspiring programmer</p>
-
-    <!-- footer will have timestamps -->
-    <footer>
-      <span class="timestamp"> 1 day ago</span>
-      <div class="icons">
-        <i class="fa-solid fa-flag hover-effect"></i>
-        <i class="fa-solid fa-retweet hover-effect"></i>
-        <i class="fa-solid fa-heart hover-effect"></i>
-      </div>
-    </footer>
-  </article>
+<section id="tweets-container">
+  <!-- This section is dynamically rendered via client.js,  review there -->
 </section>
     </main>
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
