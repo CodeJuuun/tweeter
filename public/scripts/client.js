@@ -9,6 +9,7 @@ const timeAgo = function(timestamp) {
   return differenceInDays === 0 ? "Today" : `${differenceInDays} day(s) ago`;
 };
 
+// will create a dynamically changing html
   const createTweetElement = function(tweet) {
     const timeAgoText = timeAgo(tweet.created_at);
     const $tweet = $(
@@ -38,6 +39,7 @@ const timeAgo = function(timestamp) {
     return $tweet
   }
 
+// render the actual html onto the web page
 // param @ array of tweets
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -47,27 +49,41 @@ const timeAgo = function(timestamp) {
   }
 
 
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants.",
-      },
-      created_at: 1461116232227,
-    }
-    // Add more tweets if you want!
-  ];
+//   const data = [
+//     {
+//       user: {
+//         name: "Newton",
+//         avatars: "https://i.imgur.com/73hZDYK.png",
+//         handle: "@SirIsaac",
+//       },
+//       content: {
+//         text: "If I have seen further it is by standing on the shoulders of giants.",
+//       },
+//       created_at: 1461116232227,
+//     }
+//     // Add more tweets if you want!
+//   ];
   
-  renderTweets(data);
-})
+//   renderTweets(data);
+// })
 
 $(".tweeter-form").on("submit", function(event) {
   event.preventDefault(); //prevents page from refreshing
 
   const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
   console.log("form submitted", formData) // testing code
+
+  // will fetch (GET) the tweets, making a request to the server to receive the array of tweets as JSON
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+      success: (data) => {
+        console.log("Tweet posted!") // debugging log
+        renderTweets(data)
+      }
+    });
+  }
+  loadTweets()
 });
+})
