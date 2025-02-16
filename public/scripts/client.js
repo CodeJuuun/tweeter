@@ -42,7 +42,7 @@ const timeAgo = function(timestamp) {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet); // loop through data and generate HTML for each tweet
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").prepend($tweet);
     }
   }
 
