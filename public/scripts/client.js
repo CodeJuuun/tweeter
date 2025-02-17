@@ -66,6 +66,18 @@ $(document).ready(() => {
 
 $(".tweeter-form").on("submit", function(event) {
   event.preventDefault(); //prevents page from refreshing
+  const tweetText = $("#tweet-text").val();  //grab tweet text
+
+// add validation check first- if there is no text
+if (!tweetText) {
+  alert("Tweet cannot be empty");
+  return; // must include return to stop from submitting
+}
+
+if (tweetText.length> 140) {
+  alert("Cannot exceed 140 characters");
+  return;
+}
 
   const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
   console.log("form submitted", formData) // testing code
@@ -75,7 +87,7 @@ $(".tweeter-form").on("submit", function(event) {
     url:"/tweets",
     data: formData,
     success: () => {
-      console.log("Tweet posted successfully!");
+      console.log("Tweet posted successfully!"); // debugging log
       loadTweets();
     },
     error: (err) => {
