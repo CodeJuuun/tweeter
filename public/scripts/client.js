@@ -79,7 +79,7 @@ if (tweetText.length> 140) {
 }
 $(".tweeter-form").on("submit", function(event) {
   event.preventDefault(); //prevents page from refreshing
-  const tweetText = $("#tweet-text").val();  //grab tweet text
+  const tweetText = $("#tweet-text").val().trim();  //grab tweet text
 
   // use helper function
   if (!isTweetValid(tweetText)) {
