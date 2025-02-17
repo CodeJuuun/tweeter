@@ -27,7 +27,21 @@ body {
  */
 
  main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
+ }
+
+ main > div {
+  min-width: 600px;
+ }
+
+ @media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
  }

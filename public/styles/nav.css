@@ -34,3 +34,10 @@ nav span {
 .right-side i {
   margin-left: 25px;;
 }
+
+@media screen and (max-width: 1024px) {
+  nav {
+    background-color: rgb(5, 151, 95);
+    background-image: url(https://www.transparenttextures.com/patterns/black-thread-light.png);
+  }
+ }

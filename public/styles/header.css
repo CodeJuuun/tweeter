@@ -3,14 +3,38 @@
   flex-direction: column;
   justify-content:center;
   align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  height: auto;
-  padding: 20px;
-  /* position: sticky; */
+  margin-top: 2em;
+  width: 50%;
+  height: 400px;
   background-color: rgb(5, 151, 95);
   background-image: url(https://www.transparenttextures.com/patterns/black-thread-light.png);
 }
 
 
 /* Tablet style only */
+
+/* @media only screen and (min-width: 768px) {
+  .header-bg {
+    height: 200px;
+  }
+} */
+
+/* Desktop only styles */
+
+/* @media screen and (min-width: 1024px) {
+  .header-bg {
+    width: 30.3%;
+    position: fixed;
+    top: 240px;
+    left: 70px;
+    height: auto;
+    padding: 20px;
+  }
+} */
+
+@media screen and (max-width: 1024px) {
+  .header-bg {
+    margin-top: 0;
+    width: 100%;
+  }
+ }
