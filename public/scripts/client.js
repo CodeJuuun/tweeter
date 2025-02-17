@@ -55,6 +55,9 @@ $(document).ready(() => {
       success: (data) => {
         console.log("Tweet posted!") // debugging log
         renderTweets(data)
+      },
+      error: (err) => {
+        console.error("Error loading tweets:", err)
       }
     });
   }
@@ -74,6 +77,9 @@ $(".tweeter-form").on("submit", function(event) {
     success: () => {
       console.log("Tweet posted successfully!");
       loadTweets();
+    },
+    error: (err) => {
+      console.error("There was an error posting the tweet", err);
     }
   })
 });
