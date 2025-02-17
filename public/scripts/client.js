@@ -96,6 +96,7 @@ $(document).ready(() => {
       success: () => {
         console.log("Tweet posted successfully!"); // debugging log
         loadTweets();
+        $("#tweet-text").val(''); // clears input field after submitting
       },
       error: (err) => {
         console.error("There was an error posting the tweet", err);
