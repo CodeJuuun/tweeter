@@ -26,6 +26,7 @@ nav span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .right-side i {
   margin-left: 25px;;
