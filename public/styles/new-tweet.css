@@ -1,6 +1,7 @@
 .tweeter-form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -29,6 +30,7 @@
   margin-bottom: 10px;
   font-size: 16px;
   resize: none;
+  max-width: 600px;
   width: 100%;
   background-color: #f4f1ec;
 }
