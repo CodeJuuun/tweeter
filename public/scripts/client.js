@@ -1,4 +1,6 @@
 $(document).ready(() => {
+
+  $("error-message").hide();
   // helper function to convert timestamp into readable format
 //------------------------------------------------------------------
   const timeAgo = function(timestamp) {
@@ -66,12 +68,12 @@ $(document).ready(() => {
   const isTweetValid = function(tweetText) {
   // add validation check first- if there is no text
     if (!tweetText) {
-      alert("Tweet cannot be empty");
+      $("#error-message").text("You gotta write something first!").slideDown(300);
       return false; // must include return to stop from submitting
     }
 
     if (tweetText.length > 140) {
-      alert("Cannot exceed 140 characters");
+      $("#error-message").text("You've gone beyond the 140 character limit, keep it short!").slideDown(300);
       return false;
     }
     return true;
@@ -81,6 +83,8 @@ $(document).ready(() => {
     event.preventDefault(); //prevents page from refreshing
 
     const tweetText = $("#tweet-text").val().trim();  //grab tweet text
+
+    $("#error-message").slideUp(200).text("");
 
     // use helper function
     if (!isTweetValid(tweetText)) {
