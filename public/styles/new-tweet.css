@@ -64,3 +64,15 @@
 .tweeter-form div.btn-container .over-char-limit {
   color: red;
 }
+
+#error-message {
+  display: none;
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+
+}
+
+#error-message.show {
+  display: block;
+}
