@@ -20,6 +20,13 @@ nav span {
   color: red;
 }
 
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .right-side i {
   margin-left: 25px;;
 }
