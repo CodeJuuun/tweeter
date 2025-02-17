@@ -2,12 +2,10 @@ $(document).ready(() => {
 
 
  // helper function to convert timestamp into readable format
-const timeAgo = function(timestamp) {
-  const now = Date.now();
-  const differenceInMilliseconds = now - timestamp;
-  const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-  return differenceInDays === 0 ? "Today" : `${differenceInDays} day(s) ago`;
-};
+
+ const timeAgo = function(timestamp) {
+   return timeago.format(timestamp)
+ }
 
 // will create a dynamically changing html
   const createTweetElement = function(tweet) {
@@ -17,7 +15,7 @@ const timeAgo = function(timestamp) {
     <!-- header will contain user info -->
     <header>
       <div class="user-box">
-        <img src= ${tweet.user.avatars} alt="user avatar">
+        <img src= "${tweet.user.avatars}" alt="user avatar">
         <span class="tweet-name"> ${tweet.user.name} </span>
       </div>
       <span class="tweet-username">${tweet.user.handle}</span>
