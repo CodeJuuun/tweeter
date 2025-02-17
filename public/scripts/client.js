@@ -31,7 +31,8 @@ $(document).ready(() => {
       </div>
     </footer>
   </article>`);
-
+  
+  $(".tweet-contents", $tweet).text(tweet.content.text) // xss security
     return $tweet;
   };
 
