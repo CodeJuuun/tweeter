@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -26,22 +29,22 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
- }
+}
 
- main > div {
+main>div {
   min-width: 600px;
- }
+}
 
- @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   main {
     flex-direction: column;
     width: 100%;
   }
- }
+}

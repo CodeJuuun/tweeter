@@ -1,7 +1,7 @@
 .header-bg {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   margin-top: 2em;
   width: 50%;
@@ -37,4 +37,4 @@
     margin-top: 0;
     width: 100%;
   }
- }
+}

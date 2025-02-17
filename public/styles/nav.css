@@ -24,6 +24,7 @@ nav span {
   margin-bottom: 5px;
   font-size: 16px;
 }
+
 .right-side {
   display: flex;
   flex-direction: column;
@@ -31,8 +32,10 @@ nav span {
   align-items: center;
   cursor: pointer;
 }
+
 .right-side i {
-  margin-left: 25px;;
+  margin-left: 25px;
+  ;
 }
 
 @media screen and (max-width: 1024px) {
@@ -40,4 +43,4 @@ nav span {
     background-color: rgb(5, 151, 95);
     background-image: url(https://www.transparenttextures.com/patterns/black-thread-light.png);
   }
- }
+}

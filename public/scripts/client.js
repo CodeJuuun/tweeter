@@ -2,11 +2,11 @@ $(document).ready(() => {
 
   $("error-message").hide();
   // helper function to convert timestamp into readable format
-//------------------------------------------------------------------
+  //------------------------------------------------------------------
   const timeAgo = function(timestamp) {
     return timeago.format(timestamp);
   };
-//------------------------------------------------------------------
+  //------------------------------------------------------------------
   // will create a dynamically changing html
   const createTweetElement = function(tweet) {
     const timeAgoText = timeAgo(tweet.created_at);
@@ -33,11 +33,11 @@ $(document).ready(() => {
       </div>
     </footer>
   </article>`);
-  
-  $(".tweet-contents", $tweet).text(tweet.content.text) // xss security
+
+    $(".tweet-contents", $tweet).text(tweet.content.text); // xss security
     return $tweet;
   };
-//------------------------------------------------------------------
+  //------------------------------------------------------------------
   // render the actual html onto the web page
   // param @ array of tweets
   const renderTweets = function(tweets) {
@@ -46,8 +46,8 @@ $(document).ready(() => {
       const $tweet = createTweetElement(tweet); // loop through data and generate HTML for each tweet
       $("#tweets-container").prepend($tweet);
     }
-  }
-//------------------------------------------------------------------
+  };
+  //------------------------------------------------------------------
   // will fetch (GET) the tweets, making a request to the server to receive the array of tweets as JSON
   const loadTweets = () => {
     $.ajax({
@@ -63,10 +63,10 @@ $(document).ready(() => {
     });
   };
   loadTweets();
-//------------------------------------------------------------------
+  //------------------------------------------------------------------
   // helper function to valid check the tweets
   const isTweetValid = function(tweetText) {
-  // add validation check first- if there is no text
+    // add validation check first- if there is no text
     if (!tweetText) {
       $("#error-message").text("You gotta write something first!").slideDown(300);
       return false; // must include return to stop from submitting
@@ -96,7 +96,7 @@ $(document).ready(() => {
 
     $.ajax({
       method: "POST",
-      url:"/tweets",
+      url: "/tweets",
       data: formData,
       success: () => {
         console.log("Tweet posted successfully!"); // debugging log
