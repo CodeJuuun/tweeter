@@ -1,10 +1,10 @@
 $(document).ready(() => {
   // helper function to convert timestamp into readable format
-
+//------------------------------------------------------------------
   const timeAgo = function(timestamp) {
     return timeago.format(timestamp);
   };
-
+//------------------------------------------------------------------
   // will create a dynamically changing html
   const createTweetElement = function(tweet) {
     const timeAgoText = timeAgo(tweet.created_at);
@@ -35,7 +35,7 @@ $(document).ready(() => {
   $(".tweet-contents", $tweet).text(tweet.content.text) // xss security
     return $tweet;
   };
-
+//------------------------------------------------------------------
   // render the actual html onto the web page
   // param @ array of tweets
   const renderTweets = function(tweets) {
@@ -45,7 +45,7 @@ $(document).ready(() => {
       $("#tweets-container").prepend($tweet);
     }
   }
-
+//------------------------------------------------------------------
   // will fetch (GET) the tweets, making a request to the server to receive the array of tweets as JSON
   const loadTweets = () => {
     $.ajax({
@@ -61,8 +61,7 @@ $(document).ready(() => {
     });
   };
   loadTweets();
-
-
+//------------------------------------------------------------------
   // helper function to valid check the tweets
   const isTweetValid = function(tweetText) {
   // add validation check first- if there is no text
@@ -77,9 +76,10 @@ $(document).ready(() => {
     }
     return true;
   };
-  
+  //------------------------------------------------------------------
   $(".tweeter-form").on("submit", function(event) {
     event.preventDefault(); //prevents page from refreshing
+
     const tweetText = $("#tweet-text").val().trim();  //grab tweet text
 
     // use helper function
