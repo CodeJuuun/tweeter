@@ -11,6 +11,8 @@
   margin: 15px;
   width: 80%;
   max-width: 600px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .tweet-box:hover {
@@ -64,4 +66,7 @@ footer {
 
 .tweet-contents {
   border-bottom: 2px solid black;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
 }
