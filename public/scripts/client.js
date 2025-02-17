@@ -69,13 +69,14 @@ const isTweetValid = function(tweetText) {
   // add validation check first- if there is no text
 if (!tweetText) {
   alert("Tweet cannot be empty");
-  return; // must include return to stop from submitting
+  return false; // must include return to stop from submitting
 }
 
 if (tweetText.length> 140) {
   alert("Cannot exceed 140 characters");
-  return;
+  return false;
 }
+return true;
 }
 $(".tweeter-form").on("submit", function(event) {
   event.preventDefault(); //prevents page from refreshing
