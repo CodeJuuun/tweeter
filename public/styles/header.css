@@ -8,3 +8,12 @@
   background-color: rgb(5, 151, 95);
   background-image: url(https://www.transparenttextures.com/patterns/black-thread-light.png);
 }
+
+
+/* Tablet style only */
+
+@media only screen and (min-width: 768px) {
+  .header-bg {
+    height: 200px;
+  }
+}
