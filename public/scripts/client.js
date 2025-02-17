@@ -1,13 +1,11 @@
 $(document).ready(() => {
+  // helper function to convert timestamp into readable format
 
+  const timeAgo = function(timestamp) {
+    return timeago.format(timestamp);
+  };
 
- // helper function to convert timestamp into readable format
-
- const timeAgo = function(timestamp) {
-   return timeago.format(timestamp)
- }
-
-// will create a dynamically changing html
+  // will create a dynamically changing html
   const createTweetElement = function(tweet) {
     const timeAgoText = timeAgo(tweet.created_at);
     const $tweet = $(
@@ -32,13 +30,13 @@ $(document).ready(() => {
         <i class="fa-solid fa-heart hover-effect"></i>
       </div>
     </footer>
-  </article>`)
+  </article>`);
 
-    return $tweet
-  }
+    return $tweet;
+  };
 
-// render the actual html onto the web page
-// param @ array of tweets
+  // render the actual html onto the web page
+  // param @ array of tweets
   const renderTweets = function(tweets) {
     $("#tweets-container").empty();
     for (let tweet of tweets) {
@@ -53,54 +51,55 @@ $(document).ready(() => {
       method: "GET",
       url: "/tweets",
       success: (data) => {
-        console.log("Tweet posted!") // debugging log
-        renderTweets(data)
+        console.log("Tweet posted!"); // debugging log
+        renderTweets(data);
       },
       error: (err) => {
-        console.error("Error loading tweets:", err)
+        console.error("Error loading tweets:", err);
       }
     });
-  }
-  loadTweets()
+  };
+  loadTweets();
 
 
   // helper function to valid check the tweets
-const isTweetValid = function(tweetText) {
+  const isTweetValid = function(tweetText) {
   // add validation check first- if there is no text
-if (!tweetText) {
-  alert("Tweet cannot be empty");
-  return false; // must include return to stop from submitting
-}
-
-if (tweetText.length> 140) {
-  alert("Cannot exceed 140 characters");
-  return false;
-}
-return true;
-}
-$(".tweeter-form").on("submit", function(event) {
-  event.preventDefault(); //prevents page from refreshing
-  const tweetText = $("#tweet-text").val().trim();  //grab tweet text
-
-  // use helper function
-  if (!isTweetValid(tweetText)) {
-    return;
-  }
-
-  const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
-  console.log("form submitted", formData) // testing code
-
-  $.ajax({
-    method: "POST",
-    url:"/tweets",
-    data: formData,
-    success: () => {
-      console.log("Tweet posted successfully!"); // debugging log
-      loadTweets();
-    },
-    error: (err) => {
-      console.error("There was an error posting the tweet", err);
+    if (!tweetText) {
+      alert("Tweet cannot be empty");
+      return false; // must include return to stop from submitting
     }
-  })
+
+    if (tweetText.length > 140) {
+      alert("Cannot exceed 140 characters");
+      return false;
+    }
+    return true;
+  };
+  
+  $(".tweeter-form").on("submit", function(event) {
+    event.preventDefault(); //prevents page from refreshing
+    const tweetText = $("#tweet-text").val().trim();  //grab tweet text
+
+    // use helper function
+    if (!isTweetValid(tweetText)) {
+      return;
+    }
+
+    const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
+    console.log("form submitted", formData); // testing code
+
+    $.ajax({
+      method: "POST",
+      url:"/tweets",
+      data: formData,
+      success: () => {
+        console.log("Tweet posted successfully!"); // debugging log
+        loadTweets();
+      },
+      error: (err) => {
+        console.error("There was an error posting the tweet", err);
+      }
+    });
+  });
 });
-})
