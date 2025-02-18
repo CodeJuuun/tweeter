@@ -24,4 +24,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of tweeter page desktop style"] (https://github.com/CodeJuuun/tweeter/blob/master/docs/over-limit.png?raw=true)
+!["Screenshot of tweeter page desktop style"](https://github.com/CodeJuuun/tweeter/blob/master/docs/tweeter-page.png?raw=true)
+
+!["Screenshot of tweeter page in mobile style"](https://github.com/CodeJuuun/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)
+
+!["Screenshot of tweeter page over the character limit"](https://github.com/CodeJuuun/tweeter/blob/master/docs/over-limit.png?raw=true)
+
+!["Screenshot of tweeter page over the character limit in mobile style"](https://github.com/CodeJuuun/tweeter/blob/master/docs/over-the-limit.png?raw=true)
