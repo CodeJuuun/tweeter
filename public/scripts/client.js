@@ -1,7 +1,21 @@
 $(document).ready(() => {
 
   $("error-message").hide();
-  // helper function to convert timestamp into readable format
+
+  // function to valid check the tweets
+  const isTweetValid = function(tweetText) {
+    if (!tweetText) {
+      $("#error-message").text("You gotta write something first!").slideDown(300);
+      return false;
+    }
+
+    if (tweetText.length > 140) {
+      $("#error-message").text("You've gone beyond the 140 character limit, keep it short!").slideDown(300);
+      return false;
+    }
+    return true;
+  };
+  // function to convert timestamp into readable format
   //------------------------------------------------------------------
   const timeAgo = function(timestamp) {
     return timeago.format(timestamp);
@@ -63,44 +77,28 @@ $(document).ready(() => {
   };
   loadTweets();
   //------------------------------------------------------------------
-  // helper function to valid check the tweets
-  const isTweetValid = function(tweetText) {
-    if (!tweetText) {
-      $("#error-message").text("You gotta write something first!").slideDown(300);
-      return false;
-    }
-
-    if (tweetText.length > 140) {
-      $("#error-message").text("You've gone beyond the 140 character limit, keep it short!").slideDown(300);
-      return false;
-    }
-    return true;
-  };
-  //------------------------------------------------------------------
+  // handle form submission and validates tweet input via AJAX
   $(".tweeter-form").on("submit", function(event) {
-    event.preventDefault(); //prevents page from refreshing
+    event.preventDefault();
 
-    const tweetText = $("#tweet-text").val().trim();  //grab tweet text
+    const tweetText = $("#tweet-text").val().trim();
 
     $("#error-message").slideUp(200).text("");
 
-    // use helper function
     if (!isTweetValid(tweetText)) {
       return;
     }
 
-    const formData = $(this).serialize(); //any input will be taken and converts them into a query string format, (text=hello%20world)
-    console.log("form submitted", formData); // testing code
+    const formData = $(this).serialize();
 
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: formData,
       success: () => {
-        console.log("Tweet posted successfully!"); // debugging log
         loadTweets();
-        $("#tweet-text").val(''); // clears input field after submitting
-        $(".counter").text(140); //resets counter to 140
+        $("#tweet-text").val('');
+        $(".counter").text(140);
       },
       error: (err) => {
         console.error("There was an error posting the tweet", err);
