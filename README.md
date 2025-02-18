@@ -16,3 +16,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parse
+- Chance
+- MD5
+- Timeago.js
+
+
+## Screenshots
+
+!["Screenshot of tweeter page desktop style"] (https://github.com/CodeJuuun/tweeter/blob/master/docs/over-limit.png?raw=true)
