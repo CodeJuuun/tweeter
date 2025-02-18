@@ -102,6 +102,7 @@ $(document).ready(() => {
         console.log("Tweet posted successfully!"); // debugging log
         loadTweets();
         $("#tweet-text").val(''); // clears input field after submitting
+        $(".counter").text(140); //resets counter to 140
       },
       error: (err) => {
         console.error("There was an error posting the tweet", err);
