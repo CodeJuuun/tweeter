@@ -64,6 +64,7 @@ footer {
 .icons {
   display: flex;
   justify-content: end;
+  cursor: pointer;
 }
 
 .tweet-contents {
