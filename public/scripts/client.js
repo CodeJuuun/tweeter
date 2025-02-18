@@ -34,16 +34,16 @@ $(document).ready(() => {
     </footer>
   </article>`);
 
-    $(".tweet-contents", $tweet).text(tweet.content.text); // xss security
+    // XSS security added
+    $(".tweet-contents", $tweet).text(tweet.content.text);
     return $tweet;
   };
   //------------------------------------------------------------------
   // render the actual html onto the web page
-  // param @ array of tweets
   const renderTweets = function(tweets) {
     $("#tweets-container").empty();
     for (let tweet of tweets) {
-      const $tweet = createTweetElement(tweet); // loop through data and generate HTML for each tweet
+      const $tweet = createTweetElement(tweet);
       $("#tweets-container").prepend($tweet);
     }
   };
@@ -54,7 +54,6 @@ $(document).ready(() => {
       method: "GET",
       url: "/tweets",
       success: (data) => {
-        console.log("Tweet posted!"); // debugging log
         renderTweets(data);
       },
       error: (err) => {
@@ -66,10 +65,9 @@ $(document).ready(() => {
   //------------------------------------------------------------------
   // helper function to valid check the tweets
   const isTweetValid = function(tweetText) {
-    // add validation check first- if there is no text
     if (!tweetText) {
       $("#error-message").text("You gotta write something first!").slideDown(300);
-      return false; // must include return to stop from submitting
+      return false;
     }
 
     if (tweetText.length > 140) {
