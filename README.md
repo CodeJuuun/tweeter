@@ -16,11 +16,19 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
-- Body-parse
-- Chance
-- MD5
-- Timeago.js
+- body-parse 1.15
+- chance 1.0.2
+- md5 2.1.0
+- timeago.js 4.0.2
 
+## Dev Dependencies
+- Nodemon 1.9.2
+
+## Features
+- Create tweets with a character limit
+- Counter tracking while typing
+- Responsive design for desktop and mobile
+- Form validation to prevent empty or over-limit tweets
 
 ## Screenshots
 
